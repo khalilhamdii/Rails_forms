@@ -44,7 +44,13 @@ cd Rails_forms
 bundle install
 ```
 
-- After that, migrate the database :
+- Then, create a database :
+
+```bash
+rails db:create
+```
+
+- After that, migrate it :
 
 ```bash
 rails db:migrate
