@@ -1,4 +1,6 @@
+<!--
 <%= form_with(url: "/users", method: "post") do |form| %>
+
     <%= label_tag(:username, "Name:") %>
     <%= form.text_field :username %>
      <%= label_tag(:email, "Email:") %>
@@ -7,3 +9,13 @@
         <%= form.password_field :password %>
     <%= submit_tag("Submit") %>
   <% end %>
+-->
+
+
+<%= form_for(@user, remote: true) do |f| %>
+  username: <%= f.text_field :username, :placeholder =>  'Your user name here' %>
+  email : <%= f.email_field :email, :placeholder =>  'user@domain.com' %>
+  password : <%= f.password_field :password %>
+  <%= f.submit("Submit") %>
+<% end %>
+
