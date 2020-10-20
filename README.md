@@ -38,6 +38,18 @@ git clone https://github.com/khalilhamdii/Rails_forms.git
 cd Rails_forms
 ```
 
+- Run this command to install the needed gems :
+
+```bash
+bundle install
+```
+
+- After that, migrate the database :
+
+```bash
+rails db:migrate
+```
+
 - Run this command to start the rails server :
 
 ```bash

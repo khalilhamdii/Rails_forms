@@ -15,7 +15,7 @@
 <br>
 <% if @user.errors.any? %>
   <% @user.errors.full_messages.each do |message|%>\
-     <h3><%= message %> </h3>
+     <p style="color: red"><%= message %> </p>
   <%end%>
 <%end%>
 <br>
