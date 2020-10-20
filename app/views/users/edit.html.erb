@@ -11,16 +11,14 @@
   <% end %>
 -->
 
-<h1>Create a new user</h1>
+<h1>Edit user</h1>
 <br>
-<% if @user.errors.any? %>
-  <% @user.errors.full_messages.each do |message|%>\
-     <h3><%= message %> </h3>
-  <%end%>
-<%end%>
-<br>
-
-<%= form_for(@user, remote: true) do |f| %>
+<%= form_for(@user, html: {multipart: true}) do |f| %>
+<ul>
+  <% @user.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
   username: <%= f.text_field :username, :placeholder =>  'Your user name here' %>
   email : <%= f.email_field :email, :placeholder =>  'user@domain.com' %>
   password : <%= f.password_field :password %>
