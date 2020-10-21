@@ -1,29 +1,4 @@
-<!--
-<%= form_with(url: "/users", method: "post") do |form| %>
-
-    <%= label_tag(:username, "Name:") %>
-    <%= form.text_field :username %>
-     <%= label_tag(:email, "Email:") %>
-      <%= form.email_field :email %>
-       <%= label_tag(:password, "Password:") %>
-        <%= form.password_field :password %>
-    <%= submit_tag("Submit") %>
-  <% end %>
--->
-
 <h1>Create a new user</h1>
 <br>
-<% if @user.errors.any? %>
-  <% @user.errors.full_messages.each do |message|%>\
-     <p style="color: red"><%= message %> </p>
-  <%end%>
-<%end%>
-<br>
-
-<%= form_for @user, :validate => true do |f| %>
-  username: <%= f.text_field :username, :placeholder =>  'Your user name here' %>
-  email : <%= f.email_field :email, :placeholder =>  'user@domain.com' %>
-  password : <%= f.password_field :password %>
-  <%= f.submit("Submit") %>
-<% end %>
+<%= render "form" %>
 

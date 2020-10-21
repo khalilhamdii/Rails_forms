@@ -1,0 +1,11 @@
+<%= form_for @user, :validate => true do |f| %>
+<ul>
+  <% @user.errors.full_messages.each do |error| %>
+    <li style="color:red;"><%= error %></li>
+  <% end %>
+  </ul>
+  username: <%= f.text_field :username, :placeholder =>  'Your user name here' %>
+  email : <%= f.email_field :email, :placeholder =>  'user@domain.com' %>
+  password : <%= f.password_field :password %>
+  <%= f.submit("Submit") %>
+<% end %>
