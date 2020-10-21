@@ -1,11 +1,28 @@
-<%= form_for @user, :validate => true do |f| %>
+<%= form_for @user, :validate => true, :html => {:class => "form-input"} do |f| %>
 <ul>
   <% @user.errors.full_messages.each do |error| %>
-    <li style="color:red;"><%= error %></li>
+    <li class="errors"><%= error %></li>
   <% end %>
   </ul>
-  username: <%= f.text_field :username, :placeholder =>  'Your user name here' %>
-  email : <%= f.email_field :email, :placeholder =>  'user@domain.com' %>
-  password : <%= f.password_field :password %>
-  <%= f.submit("Submit") %>
+  <div class="input-field">
+    <div class="labels">
+      <label class="form-label">Username :</label>
+    </div>
+    <div><%= f.text_field :username, :placeholder =>  'Your user name here', :class => "inputbox" %></div>
+  </div>
+  <div class="input-field">
+    <div class="labels">
+      <label class="form-label">Email :</label>
+    </div>
+    <div><%= f.email_field :email, :placeholder =>  'user@domain.com',:class => "inputbox" %></div>
+  </div>
+  <div class="input-field">
+    <div class="labels">
+      <label class="form-label">Password :</label>
+    </div>
+    <div><%= f.password_field :password, :class => "inputbox" %></div>
+  </div>
+<div>
+  <%= f.submit("Submit", :class => "create-button") %>
+  </div>
 <% end %>
